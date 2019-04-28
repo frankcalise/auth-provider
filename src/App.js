@@ -1,5 +1,6 @@
 import React from "react";
 import { Router, Link } from "@reach/router";
+import Login from './Login'
 import "./App.css";
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
       </nav>
       <Router>
         <Home path="/" />
+        <Login path="login" />
         <Dashboard path="dashboard" />
+        <Callback path="callback" />
       </Router>
     </div>
   );
@@ -27,5 +30,9 @@ const Dashboard = () => (
     <h2>Dashboard</h2>
   </div>
 );
+
+const Callback = () => (
+  <div><h2>Logging In</h2></div>
+)
 
 export default App;
