@@ -1,6 +1,6 @@
 import React from "react";
 import auth0 from 'auth0-js'
-import {AUTH_CONFIG} from 'auth0-vars.js'
+import {AUTH_CONFIG} from './auth0-vars.js'
 
 const webAuth = new auth0.WebAuth({
   domain: AUTH_CONFIG.domain,
