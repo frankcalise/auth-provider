@@ -1,20 +1,19 @@
 import React from "react";
-import auth0 from 'auth0-js'
-import {AUTH_CONFIG} from './auth0-vars.js'
 
-const webAuth = new auth0.WebAuth({
-  domain: AUTH_CONFIG.domain,
-  clientID: AUTH_CONFIG.clientId,
-  redirectUri: AUTH_CONFIG.callbackUrl,
-  audience: `${AUTH_CONFIG.domain}/userinfo`,
-  responseType: "token id_token",
-  scope: "openid",
-})
+function Login({webAuth}) {
+  function cb(err) {
+    console.log(err);
+  }
 
-function Login() {
   function handleSubmit(e) {
     e.preventDefault();
-    
+    webAuth.login(
+      {
+        username: "test",
+        password: "test",
+      },
+      cb
+    );
   }
   return (
     <div>
